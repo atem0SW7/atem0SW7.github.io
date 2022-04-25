@@ -1,0 +1,198 @@
+from jupyter_plotly_dash import JupyterDash
+import dash
+import dash_leaflet as dl
+import dash_core_components as dcc
+import dash_html_components as html
+import plotly.express as px
+import dash_table
+from dash.dependencies import Input, Output
+from bson.json_util import dumps
+import uuid
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import plotly.graph_objects as go
+import urllib.parse
+from pymongo import MongoClient
+import json
+import io
+import base64
+
+from PIL import Image
+
+#### FIX ME #####
+# change animal_shelter and AnimalShelter to match your CRUD Python module file name and class name
+from AnimalShelterGO import AnimalShelter
+
+###########################
+# Data Manipulation / Model
+###########################
+
+username = "aacuser"
+password = "aacuserpass"
+shelter = AnimalShelter(username, password)
+
+# class read method must support return of cursor object and accept projection json input
+df = pd.DataFrame.from_records(shelter.read({}))
+    
+
+#########################
+# Dashboard
+#########################
+
+
+# this is the juypter dash application
+external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']                         
+app = JupyterDash('Animal Shelter Outcomes')
+
+app.layout = html.Div([
+    html.H1("Donald Stubbs"),
+    
+    dcc.RadioItems(
+        id='rd',
+        options=[
+            {'label': 'Water Rescue', 'value': 'Water Rescue'},
+            {'label': 'Mountain', 'value': 'Mountain or Wilderness Rescue'},
+            {'label': 'Disaster Rescue ', 'value': 'Disaster Rescue or Individual Tracking'},
+            {'label': 'Reset', 'value': 'Reset'}
+        ],
+        value='Water Rescue',
+        labelStyle={'display': 'inline-block'}
+    ),
+    html.Hr(),
+    html.Div(id='dd-output-container', children = [
+            dash_table.DataTable(
+                id='datatable-id',
+                columns=[
+                    {"name": i, "id": i, "deletable": False, "selectable": True} for i in df.columns
+                ])]),
+    html.Hr(),
+    html.Div(id='map-id'),
+    html.Hr(),
+    html.Div(id='graph-id')
+    ])
+
+
+
+   
+@app.callback(
+    dash.dependencies.Output('dd-output-container', 'children'),
+    [dash.dependencies.Input('rd', 'value')]
+    )
+def update_output(value):
+    df = pd.DataFrame.from_records(shelter.read({}))
+    
+    if value == 'Water Rescue':
+        df = pd.DataFrame.from_records(shelter.read({'$or':[{"breed":"Labrador Retriever Mix"},
+                                                        {"breed":"Chesapeake Bay Retriever"},
+                                                        {"breed":"Newfoundland"}
+                                                       ],"age_upon_outcome_in_weeks":{'$gt':26,'$lt':156},
+                                                    "sex_upon_outcome":"Intact Female"}))
+    if value == 'Mountain or Wilderness Rescue':
+    
+        df = pd.DataFrame.from_records(shelter.read({'$or':[{"breed":"German Shepherd"},
+                                                        {"breed":"Alaskan Malamute"},
+                                                        {"breed":"Old English Sheepdog"},
+                                                        {"breed":"Siberian Husky"} ,
+                                                        {"breed":"Rottweiler"}  
+                                                       ],"age_upon_outcome_in_weeks":{'$gt':26,'$lt':156},
+                                                    "sex_upon_outcome":"Intact Male"}))
+    if value == 'Disaster Rescue or Individual Tracking':
+        df = pd.DataFrame.from_records(shelter.read({'$or':[{"breed":"German Shepherd"},
+                                                        {"breed":"Doberman Pinscher"},
+                                                        {"breed":"Golden Retriever"},
+                                                        {"breed":"Bloodhound"} ,
+                                                        {"breed":"Rottweiler"}  
+                                                       ],"age_upon_outcome_in_weeks":{'$gt':20,'$lt':300},
+                                                    "sex_upon_outcome":"Intact Male"}))
+        
+    return [
+            dash_table.DataTable(
+                id='datatable-id',
+                columns=[
+                    {"name": i, "id": i, "deletable": False, "selectable": True} for i in df.columns
+                ],
+                data=df.to_dict('records'),
+                editable=True,
+                style_cell={'textAlign': 'left'},
+                 style_cell_conditional=[
+                {
+                    'if': {'column_id': s},
+                    'textAlign': 'left'
+                } for s in ['animal_type','color','breed','animal_id']
+            ],
+            style_data_conditional=[
+                {
+                    'if': {'row_index': 'odd'},
+                    'backgroundColor': 'rgb(200, 50, 50)'
+                }
+            ],
+            style_header={
+                'backgroundColor': 'rgb(0, 240, 0)',
+                'fontWeight': 'bold'
+            },
+            
+            filter_action="native",
+            sort_action="native",
+            sort_mode="multi",
+            column_selectable="single",
+            row_selectable="multi",
+            row_deletable=True,
+            selected_columns=[],
+            selected_rows=[],
+            page_action="native",
+            page_current= 0,
+            page_size= 10,
+
+            )
+        
+       ]
+
+@app.callback(
+    Output('map-id', "children"),
+    [Input('datatable-id', "derived_viewport_data", "hoverData")])
+
+def display_hover(hoverData):
+    if hoverData is None:
+        return False, no_update, no_update
+
+	bbox = ["bbox"]
+
+	# Load image of animal
+	image_path = 'dash_docs/assets/images/sample.jpg'
+    im = Image.open(image_path)
+
+	# dump it to base64 using the Python PIL Library
+    buffer = io.BytesIO()
+    im.save(buffer, format="jpeg")
+    encoded_image = base64.b64encode(buffer.getvalue()).decode()
+    im_url = "data:image/jpeg;base64, " + encoded_image
+
+# Code geolocation chart
+    dff = pd.DataFrame.from_dict(viewData)
+    # Austin TX is at [30.75,-97.48]
+    return [
+        dl.Map(style={'width': '1000px', 'height': '500px'}, center=[30.75,-97.48], zoom=10, children=[
+            dl.TileLayer(id="base-layer-id"),
+           
+            dl.Marker(position=[30.75,-97.48], children=[
+                df_row = (dff.iloc[0,4]),
+				img_src = df_row['IMG_URL']
+				name = df_row['Animal Name']
+				form = df_row['Animal Color']
+				desc = df_row['Animal ID']
+				if len(desc) > 300:
+					desc = desc[:100] + '...'
+				children = [
+                html.Div([
+
+					html.Img(src=img_src, style={"width": "100%"}),
+					html.H2(f"{Animal Name}", style={"color": "darkblue"}),
+					html.P(f"{Animal Color}"),
+					html.P(f"{Animal ID}"),
+				], style={'width': '200px', 'white-space': 'normal'})
+    ]
+
+    return True, bbox, children
+
+app.run_server(debug=True)
