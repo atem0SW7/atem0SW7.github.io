@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>C:/Users/DRSDESKTOP/source/repos/GameProj/Pipeline/sounds/TeddyBounce.wav</SourceFile>
+  <SourceTime>2012-09-30T18:10:30-04:00</SourceTime>
+  <DestFile>C:/Users/DRSDESKTOP/source/repos/GameProj/Pipeline/bin/sounds/TeddyBounce.xnb</DestFile>
+  <DestTime>2021-10-03T18:17:41.0562891-04:00</DestTime>
+  <Importer>WavImporter</Importer>
+  <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
+  <Processor>SoundEffectProcessor</Processor>
+  <ProcessorTime>2018-12-08T11:35:54-05:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>
