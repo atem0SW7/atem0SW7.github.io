@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfScore xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Score>
+    <PlayerName>Bob</PlayerName>
+    <Value>40</Value>
+  </Score>
+  <Score>
+    <PlayerName>Player Joe 1</PlayerName>
+    <Value>30</Value>
+  </Score>
+  <Score>
+    <PlayerName>Player Joe 1</PlayerName>
+    <Value>30</Value>
+  </Score>
+  <Score>
+    <PlayerName>Bob</PlayerName>
+    <Value>20</Value>
+  </Score>
+  <Score>
+    <PlayerName>Bob</PlayerName>
+    <Value>0</Value>
+  </Score>
+  <Score>
+    <PlayerName>Bob</PlayerName>
+    <Value>0</Value>
+  </Score>
+  <Score>
+    <PlayerName>Bob</PlayerName>
+    <Value>0</Value>
+  </Score>
+</ArrayOfScore>
