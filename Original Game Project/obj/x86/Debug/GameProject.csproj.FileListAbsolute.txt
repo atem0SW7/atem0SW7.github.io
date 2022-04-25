@@ -1,0 +1,43 @@
+X:\C# coursera class stuff\GameProject\GameProject\bin\Windows\Debug\Content\graphics\burger.xnb
+X:\C# coursera class stuff\GameProject\GameProject\bin\Windows\Debug\Content\graphics\explosion.xnb
+X:\C# coursera class stuff\GameProject\GameProject\bin\Windows\Debug\Content\graphics\frenchfries.xnb
+X:\C# coursera class stuff\GameProject\GameProject\bin\Windows\Debug\Content\graphics\teddybear.xnb
+X:\C# coursera class stuff\GameProject\GameProject\bin\Windows\Debug\Content\graphics\teddybearprojectile.xnb
+X:\C# coursera class stuff\GameProject\GameProject\bin\Windows\Debug\GameProject.exe
+X:\C# coursera class stuff\GameProject\GameProject\bin\Windows\Debug\GameProject.pdb
+X:\C# coursera class stuff\GameProject\GameProject\bin\Windows\Debug\MonoGame.Framework.dll
+X:\C# coursera class stuff\GameProject\GameProject\bin\Windows\Debug\SharpDX.MediaFoundation.dll
+X:\C# coursera class stuff\GameProject\GameProject\bin\Windows\Debug\SharpDX.dll
+X:\C# coursera class stuff\GameProject\GameProject\bin\Windows\Debug\SharpDX.XAudio2.dll
+X:\C# coursera class stuff\GameProject\GameProject\bin\Windows\Debug\SharpDX.Direct3D11.dll
+X:\C# coursera class stuff\GameProject\GameProject\bin\Windows\Debug\SharpDX.DXGI.dll
+X:\C# coursera class stuff\GameProject\GameProject\bin\Windows\Debug\SharpDX.Direct2D1.dll
+X:\C# coursera class stuff\GameProject\GameProject\bin\Windows\Debug\SharpDX.XInput.dll
+X:\C# coursera class stuff\GameProject\GameProject\bin\Windows\Debug\SharpDX.RawInput.dll
+X:\C# coursera class stuff\GameProject\GameProject\bin\Windows\Debug\SharpDX.Direct3D9.dll
+X:\C# coursera class stuff\GameProject\GameProject\bin\Windows\Debug\MonoGame.Framework.xml
+X:\C# coursera class stuff\GameProject\GameProject\bin\Windows\Debug\SharpDX.MediaFoundation.xml
+X:\C# coursera class stuff\GameProject\GameProject\bin\Windows\Debug\SharpDX.xml
+X:\C# coursera class stuff\GameProject\GameProject\bin\Windows\Debug\SharpDX.XAudio2.xml
+X:\C# coursera class stuff\GameProject\GameProject\bin\Windows\Debug\SharpDX.Direct3D11.xml
+X:\C# coursera class stuff\GameProject\GameProject\bin\Windows\Debug\SharpDX.DXGI.xml
+X:\C# coursera class stuff\GameProject\GameProject\bin\Windows\Debug\SharpDX.Direct2D1.xml
+X:\C# coursera class stuff\GameProject\GameProject\bin\Windows\Debug\SharpDX.XInput.xml
+X:\C# coursera class stuff\GameProject\GameProject\bin\Windows\Debug\SharpDX.RawInput.xml
+X:\C# coursera class stuff\GameProject\GameProject\bin\Windows\Debug\SharpDX.Direct3D9.xml
+X:\C# coursera class stuff\GameProject\GameProject\obj\x86\Debug\GameProject.csprojResolveAssemblyReference.cache
+X:\C# coursera class stuff\GameProject\GameProject\obj\x86\Debug\GameProject.exe
+X:\C# coursera class stuff\GameProject\GameProject\obj\x86\Debug\GameProject.pdb
+X:\C# coursera class stuff\GameProject\GameProject\bin\Windows\Debug\Content\Arial.xnb
+X:\C# coursera class stuff\GameProject\GameProject\bin\Windows\Debug\Content\sounds\BurgerDamage.xnb
+X:\C# coursera class stuff\GameProject\GameProject\bin\Windows\Debug\Content\sounds\BurgerDeath.xnb
+X:\C# coursera class stuff\GameProject\GameProject\bin\Windows\Debug\Content\sounds\BurgerShot.xnb
+X:\C# coursera class stuff\GameProject\GameProject\bin\Windows\Debug\Content\sounds\Explosion.xnb
+X:\C# coursera class stuff\GameProject\GameProject\bin\Windows\Debug\Content\sounds\TeddyBounce.xnb
+X:\C# coursera class stuff\GameProject\GameProject\bin\Windows\Debug\Content\sounds\TeddyShot.xnb
+X:\Coding stuff\C# coursera class stuff\GameProject\GameProject\obj\x86\Debug\GameProject.exe
+X:\Coding stuff\C# coursera class stuff\GameProject\GameProject\obj\x86\Debug\GameProject.pdb
+E:\Coding stuff\C# coursera class stuff\GameProject\GameProject\obj\x86\Debug\GameProject.csprojAssemblyReference.cache
+E:\Coding stuff\C# coursera class stuff\GameProject\GameProject\obj\x86\Debug\GameProject.csproj.CoreCompileInputs.cache
+E:\Coding stuff\C# coursera class stuff\GameProject\GameProject\obj\x86\Debug\GameProject.exe
+E:\Coding stuff\C# coursera class stuff\GameProject\GameProject\obj\x86\Debug\GameProject.pdb
