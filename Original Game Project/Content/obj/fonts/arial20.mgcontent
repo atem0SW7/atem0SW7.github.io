@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>E:/Coding stuff/C# coursera class stuff/GameProject/GameProject/Content/fonts/arial20.spritefont</SourceFile>
+  <SourceTime>2015-01-19T19:24:04-05:00</SourceTime>
+  <DestFile>E:/Coding stuff/C# coursera class stuff/GameProject/GameProject/Content/bin/fonts/arial20.xnb</DestFile>
+  <DestTime>2021-10-03T16:53:12.4079246-04:00</DestTime>
+  <Importer>FontDescriptionImporter</Importer>
+  <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
+  <Processor>FontDescriptionProcessor</Processor>
+  <ProcessorTime>2018-12-08T11:35:54-05:00</ProcessorTime>
+  <Parameters>
+    <Key>TextureFormat</Key>
+    <Value>Compressed</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>
